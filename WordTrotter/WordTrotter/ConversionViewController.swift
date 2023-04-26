@@ -8,15 +8,28 @@
 import UIKit
 
 class ConversionViewController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func loadView() {
+        super.loadView()
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        label.text = "100"
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
         
         
-//        _ = UIView(frame: CGRect(x: 0,y: 0, width: 320,height: 50))
-//        let gradient = CAGradientLayer()
-//        gradient.colors = [UIColor.red.cgColor, UIColor.yellow.cgColor, UIColor.orange.cgColor]
-//        gradient.frame = self.view.bounds
-//        self.view.layer.insertSublayer(gradient, at: 0)
+        
+        
+        
+        
+        func createSpacer() {
+            let spacer = UIView()
+            let spacerWidthConstraint = spacer.widthAnchor.constraint(equalToConstant: 10)
+            spacerWidthConstraint.priority = .defaultLow
+            spacerWidthConstraint.isActive = true
+            
+            view.addSubview(spacer)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
