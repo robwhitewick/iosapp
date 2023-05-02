@@ -7,17 +7,29 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
-    var mapView: MKMapView!
+class MapViewController: UIViewController, CLLocationManagerDelegate {
+    @IBOutlet var mapView: MKMapView!
+    fileprivate let locationManager:CLLocationManager = CLLocationManager()
     override func loadView() {
         //Create a map view
         mapView = MKMapView()
         mapView.showsUserLocation = true
         //Set it as *the* view of this view controller
         view = mapView
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.distanceFilter = kCLHeadingFilterNone
+        locationManager.startUpdatingLocation()
+        locationManager.delegate = self
+            
         
-        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid","Satellite"])
+        
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let segmentedControl = UISegmentedControl(items: [standardString, hybridString,satelliteString])
         segmentedControl.backgroundColor = UIColor.systemBackground
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +83,8 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print("MapViewController loaded its view")
+        
+        
     }
                                    
    @objc func mapTypeChanged(_ segControl: UISegmentedControl) {
@@ -88,5 +102,14 @@ class MapViewController: UIViewController {
     
     @objc func pointsOfInterestToggled(mySwitch: UISwitch) {
         mapView.showsPointsOfInterest = mySwitch.isOn
+    }
+    
+    func locationManager(_ manager:CLLocationManager,didUpdateLocations locations:[CLLocation]) {
+        let location = locations[0]
+        let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+        let span = MKCoordinateSpan(latitudeDelta: 0.005, longitudeDelta: 0.005)
+        let region = MKCoordinateRegion(center: myLocation, span: span)
+        print("setting region")
+        mapView.setRegion(region, animated: true)
     }
 }

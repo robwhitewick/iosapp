@@ -1,0 +1,42 @@
+
+/* Class = "UITextField"; placeholder = "value"; ObjectID = "14N-Tf-cKO"; */
+"14N-Tf-cKO.placeholder" = "valor";
+
+/* Class = "UILabel"; text = "degrees Celsius"; ObjectID = "1Uo-os-mR5"; */
+"1Uo-os-mR5.text" = "grados Celsius";
+
+/* Class = "UILabel"; text = "100"; ObjectID = "2Sf-hi-KnY"; */
+"2Sf-hi-KnY.text" = "100";
+
+/* Class = "UITabBarItem"; title = "Quiz"; ObjectID = "6cM-Gv-p0v"; */
+"6cM-Gv-p0v.title" = "Quiz";
+
+/* Class = "UIButton"; configuration.title = "Next Question"; ObjectID = "6zq-VZ-UhJ"; */
+"6zq-VZ-UhJ.configuration.title" = "Next Question";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6zq-VZ-UhJ"; */
+"6zq-VZ-UhJ.normalTitle" = "Button";
+
+/* Class = "UITabBarItem"; title = "Convert"; ObjectID = "7DV-gp-3um"; */
+"7DV-gp-3um.title" = "Convertir";
+
+/* Class = "UILabel"; text = "is really"; ObjectID = "DWz-ZU-0SY"; */
+"DWz-ZU-0SY.text" = "es realmente";
+
+/* Class = "UIButton"; configuration.title = "Show answer"; ObjectID = "KYp-lH-fLE"; */
+"KYp-lH-fLE.configuration.title" = "Show answer";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KYp-lH-fLE"; */
+"KYp-lH-fLE.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "Tty-Yt-H7e"; */
+"Tty-Yt-H7e.text" = "???";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "cFX-E8-1RU"; */
+"cFX-E8-1RU.title" = "Mapa";
+
+/* Class = "UILabel"; text = "???"; ObjectID = "d15-5U-6MV"; */
+"d15-5U-6MV.text" = "???";
+
+/* Class = "UILabel"; text = "degrees Fahrenheit"; ObjectID = "oEw-un-2gW"; */
+"oEw-un-2gW.text" = "grados Fahrenheit";
