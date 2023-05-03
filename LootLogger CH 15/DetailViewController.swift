@@ -7,16 +7,29 @@
 
 import UIKit
 
-class DetailViewController: UIViewController , UITextFieldDelegate,
-                            UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController:
+    UIViewController,
+    UITextFieldDelegate,
+    UINavigationControllerDelegate,
+    UIImagePickerControllerDelegate
+    {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var serialNumberField: UITextField!
     @IBOutlet var valueField: UITextField!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var imageView: UIImageView!
+    @IBOutlet var deleteView: UIBarButtonItem!
+     
     
-    
+    @IBAction func deleteImage(_ sender: UIBarButtonItem) {
+        print("Deleted")
+        ItemsViewController.imageStore.deleteImage(forkey: item.itemKey)
+        
+        let imageToDisplay = imageStore.image(forKey: item.itemKey)
+        imageView.image = imageToDisplay
+        
+    }
     @IBAction func choosePhotoSource(_ sender: UIBarButtonItem) {
         let alertController = UIAlertController(title: nil,
                                                 message: nil,

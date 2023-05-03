@@ -46,6 +46,7 @@ class ImageStore {
         let url = imageURL(forKey: key)
         do {
             try FileManager.default.removeItem(at: url)
+            print("deleted from disk")
         } catch {
             print("Error removing the image from disk: \(error)")
         }

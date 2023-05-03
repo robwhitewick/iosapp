@@ -179,6 +179,12 @@
                                             <action selector="choosePhotoSource:" destination="A4j-ZE-NE2" id="dRX-SJ-lMw"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="300" systemItem="fixedSpace" id="ByK-Np-jp0"/>
+                                    <barButtonItem systemItem="undo" id="Lab-Km-gar">
+                                        <connections>
+                                            <action selector="deleteImage:" destination="A4j-ZE-NE2" id="Npi-Zi-R4S"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
