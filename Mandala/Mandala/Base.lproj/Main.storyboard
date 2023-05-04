@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8NF-aH-krs">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PVL-V2-kb1">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <connections>
-                                    <segue destination="o03-LK-i5l" kind="embed" id="0ME-Bu-qlb"/>
+                                    <segue destination="o03-LK-i5l" kind="embed" identifier="embedContainerViewController" id="zDh-Fw-YA2"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rum-YN-RW7">
@@ -35,27 +35,33 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
+                                    <action selector="addMoodTapped:" destination="aUQ-0d-Ltx" eventType="touchUpInside" id="2L8-Kn-ckI"/>
                                     <action selector="s:" destination="xhH-ci-gmq" eventType="touchUpInside" id="N74-Zh-2ip"/>
                                 </connections>
                             </button>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-zr-wuC">
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzQ-zr-wuC">
                                 <rect key="frame" x="0.0" y="752" width="393" height="100"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ckU-oG-VrL">
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="ckU-oG-VrL">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="100"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JAn-Ka-ICt">
-                                            <rect key="frame" x="8" y="8" width="377" height="50"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZH-QW-Byp" customClass="ImageSelector" customModule="Mandala" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="16" width="377" height="50"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" priority="750" constant="50" id="bh5-XK-k4o"/>
+                                                <constraint firstAttribute="height" constant="50" id="6tt-Qt-n16"/>
                                             </constraints>
-                                        </stackView>
+                                            <connections>
+                                                <action selector="moodSelectorChanged:" destination="aUQ-0d-Ltx" eventType="valueChanged" id="kYr-bT-0SH"/>
+                                            </connections>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="leadingMargin" secondItem="JAn-Ka-ICt" secondAttribute="leading" id="XY4-Y3-odV"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="JAn-Ka-ICt" secondAttribute="trailing" id="i6a-AM-DfF"/>
-                                        <constraint firstItem="JAn-Ka-ICt" firstAttribute="top" secondItem="ckU-oG-VrL" secondAttribute="top" constant="8" id="mRb-pH-xua"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="JAn-Ka-ICt" secondAttribute="bottom" id="xjD-xM-Qbt"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="PZH-QW-Byp" secondAttribute="bottom" id="CAU-uA-NKa"/>
+                                        <constraint firstItem="PZH-QW-Byp" firstAttribute="leading" secondItem="ckU-oG-VrL" secondAttribute="leadingMargin" id="Gzd-9k-q6h"/>
+                                        <constraint firstItem="PZH-QW-Byp" firstAttribute="top" secondItem="ckU-oG-VrL" secondAttribute="topMargin" constant="8" id="O9c-My-oFa"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="PZH-QW-Byp" secondAttribute="trailing" id="ktT-gI-rKc"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="regular"/>
@@ -64,28 +70,24 @@
                         <viewLayoutGuide key="safeArea" id="Mrp-fe-C7q"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bzQ-zr-wuC" firstAttribute="top" secondItem="Rum-YN-RW7" secondAttribute="bottom" constant="20" id="2Sz-Up-pVP"/>
                             <constraint firstItem="Rum-YN-RW7" firstAttribute="centerX" secondItem="ScY-kS-S3Y" secondAttribute="centerX" id="3aw-w9-9H8"/>
-                            <constraint firstItem="8NF-aH-krs" firstAttribute="leading" secondItem="ScY-kS-S3Y" secondAttribute="leading" id="5R9-nS-9Cj"/>
-                            <constraint firstItem="8NF-aH-krs" firstAttribute="top" secondItem="ScY-kS-S3Y" secondAttribute="top" id="SFy-Ca-LjS"/>
-                            <constraint firstAttribute="bottom" secondItem="8NF-aH-krs" secondAttribute="bottom" id="Six-yx-igN"/>
-                            <constraint firstAttribute="bottom" secondItem="bzQ-zr-wuC" secondAttribute="bottom" id="Zuj-Dy-BTS"/>
+                            <constraint firstItem="PVL-V2-kb1" firstAttribute="leading" secondItem="ScY-kS-S3Y" secondAttribute="leading" id="KoO-8G-zCb"/>
+                            <constraint firstAttribute="bottom" secondItem="PVL-V2-kb1" secondAttribute="bottom" id="XlS-fa-N98"/>
                             <constraint firstItem="Rum-YN-RW7" firstAttribute="top" secondItem="Mrp-fe-C7q" secondAttribute="top" constant="625" id="eyM-FM-Oz7"/>
-                            <constraint firstAttribute="trailing" secondItem="bzQ-zr-wuC" secondAttribute="trailing" id="lid-BB-ETd"/>
                             <constraint firstItem="Rum-YN-RW7" firstAttribute="width" secondItem="Mrp-fe-C7q" secondAttribute="width" multiplier="0.5" id="mOx-tv-K8A"/>
-                            <constraint firstAttribute="trailing" secondItem="8NF-aH-krs" secondAttribute="trailing" id="mh0-dT-mQR"/>
-                            <constraint firstItem="bzQ-zr-wuC" firstAttribute="leading" secondItem="ScY-kS-S3Y" secondAttribute="leading" id="qkF-G4-dbO"/>
+                            <constraint firstItem="PVL-V2-kb1" firstAttribute="top" secondItem="ScY-kS-S3Y" secondAttribute="top" id="r4y-Kr-CsP"/>
+                            <constraint firstAttribute="trailing" secondItem="PVL-V2-kb1" secondAttribute="trailing" id="yhb-aq-38c"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addMoodButton" destination="Rum-YN-RW7" id="U09-ff-enb"/>
-                        <outlet property="stackView" destination="JAn-Ka-ICt" id="rFP-FW-Ojc"/>
+                        <outlet property="moodSelector" destination="PZH-QW-Byp" id="FpC-Qg-ONp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fiy-AB-717" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="xhH-ci-gmq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-276" y="-267"/>
+            <point key="canvasLocation" x="-277.09923664122135" y="-267.6056338028169"/>
         </scene>
         <!--Mood List View Controller-->
         <scene sceneID="OzT-Ye-7mv">
@@ -129,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jk4-bi-65B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="573" y="-268"/>
+            <point key="canvasLocation" x="532" y="-268"/>
         </scene>
     </scenes>
     <resources>

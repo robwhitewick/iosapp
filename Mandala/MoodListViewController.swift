@@ -29,4 +29,14 @@ class MoodListViewController: UITableViewController {
         
         return cell
     }
+    
+}
+
+extension MoodListViewController: MoodsConfigurable {
+    
+
+    func add(_ moodEntry: MoodEntry) {
+        moodEntries.insert(moodEntry, at: 0)
+        tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .automatic)
+    }
 }
