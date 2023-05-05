@@ -182,7 +182,7 @@
                                     <barButtonItem width="300" systemItem="fixedSpace" id="ByK-Np-jp0"/>
                                     <barButtonItem systemItem="undo" id="Lab-Km-gar">
                                         <connections>
-                                            <action selector="deleteImage:" destination="A4j-ZE-NE2" id="Npi-Zi-R4S"/>
+                                            <action selector="deleteImage:" destination="A4j-ZE-NE2" id="fVE-k3-WsB"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -203,6 +203,7 @@
                     <navigationItem key="navigationItem" id="tus-c7-UXp"/>
                     <connections>
                         <outlet property="dateLabel" destination="lQL-Q9-KG8" id="VxA-Sa-OYa"/>
+                        <outlet property="deleteView" destination="Lab-Km-gar" id="ii1-YX-n2l"/>
                         <outlet property="imageView" destination="esH-Pw-A6g" id="Y7t-PZ-gPf"/>
                         <outlet property="nameField" destination="HYf-gn-7bg" id="IHF-Zi-YZl"/>
                         <outlet property="serialNumberField" destination="BcZ-ka-YxW" id="Kwf-9a-y9Q"/>
