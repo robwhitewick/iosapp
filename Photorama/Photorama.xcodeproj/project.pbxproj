@@ -27,8 +27,8 @@
 		2BB122F42A05191A0011354C /* Photorama.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2BB122F22A05191A0011354C /* Photorama.xcdatamodeld */; };
 		2BB123122A053EFC0011354C /* TagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123112A053EFC0011354C /* TagsViewController.swift */; };
 		2BB123142A053FA50011354C /* TagDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123132A053FA50011354C /* TagDataSource.swift */; };
-		2BB123172A05433A0011354C /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123152A05433A0011354C /* Photo+CoreDataClass.swift */; };
-		2BB123182A05433A0011354C /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123162A05433A0011354C /* Photo+CoreDataProperties.swift */; };
+		2BB1231B2A055AF00011354C /* Photo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB123192A055AF00011354C /* Photo+CoreDataClass.swift */; };
+		2BB1231C2A055AF00011354C /* Photo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB1231A2A055AF00011354C /* Photo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,8 +73,8 @@
 		2BB122F32A05191A0011354C /* Photorama.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photorama.xcdatamodel; sourceTree = "<group>"; };
 		2BB123112A053EFC0011354C /* TagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsViewController.swift; sourceTree = "<group>"; };
 		2BB123132A053FA50011354C /* TagDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagDataSource.swift; sourceTree = "<group>"; };
-		2BB123152A05433A0011354C /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2BB123162A05433A0011354C /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2BB123192A055AF00011354C /* Photo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2BB1231A2A055AF00011354C /* Photo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Photo+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +105,8 @@
 		2B02847D2A03D74200EE9DB9 = {
 			isa = PBXGroup;
 			children = (
-				2BB123152A05433A0011354C /* Photo+CoreDataClass.swift */,
-				2BB123162A05433A0011354C /* Photo+CoreDataProperties.swift */,
+				2BB123192A055AF00011354C /* Photo+CoreDataClass.swift */,
+				2BB1231A2A055AF00011354C /* Photo+CoreDataProperties.swift */,
 				2BB123132A053FA50011354C /* TagDataSource.swift */,
 				2BB123112A053EFC0011354C /* TagsViewController.swift */,
 				2BB122F22A05191A0011354C /* Photorama.xcdatamodeld */,
@@ -300,13 +300,13 @@
 				2B0284BE2A03FBA900EE9DB9 /* FlickrPhoto.swift in Sources */,
 				2BB123142A053FA50011354C /* TagDataSource.swift in Sources */,
 				2BB122F12A05136A0011354C /* PhotoInfoViewController.swift in Sources */,
-				2BB123182A05433A0011354C /* Photo+CoreDataProperties.swift in Sources */,
+				2BB1231C2A055AF00011354C /* Photo+CoreDataProperties.swift in Sources */,
 				2BB122EB2A050CAF0011354C /* PhotoCollectionViewCell.swift in Sources */,
 				2BB122E92A0504310011354C /* PhotoDataSource.swift in Sources */,
 				2B0284BC2A03F6E400EE9DB9 /* PhotoStore.swift in Sources */,
 				2B02848E2A03D74200EE9DB9 /* PhotosViewController.swift in Sources */,
 				2BB122EF2A0512A00011354C /* ImageStore.swift in Sources */,
-				2BB123172A05433A0011354C /* Photo+CoreDataClass.swift in Sources */,
+				2BB1231B2A055AF00011354C /* Photo+CoreDataClass.swift in Sources */,
 				2BB122F42A05191A0011354C /* Photorama.xcdatamodeld in Sources */,
 				2B02848A2A03D74200EE9DB9 /* AppDelegate.swift in Sources */,
 				2BB123122A053EFC0011354C /* TagsViewController.swift in Sources */,

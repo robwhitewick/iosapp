@@ -84,7 +84,8 @@ class PhotoStore {
                         photo.photoID = flickrPhoto.photoID
                         photo.remoteURL = flickrPhoto.remoteURL
                         photo.dateTaken = flickrPhoto.dateTaken
-                        photo.viewCount = 0
+                        photo.viewCount = photo.viewCount
+                        photo.favorite = photo.favorite
                         
                     }
                     return photo
@@ -157,12 +158,26 @@ class PhotoStore {
         return .success(image)
     }
     
-    func fetchAllPhotos( completion: @escaping (Result<[Photo],Error>) -> Void) {
+    func fetchAllPhotos(favorite: Bool, completion: @escaping (Result<[Photo],Error>) -> Void) {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
-        let sortByDateTaken = NSSortDescriptor(key: #keyPath(Photo.dateTaken),
-                                               ascending: true)
         
-        fetchRequest.sortDescriptors = [sortByDateTaken]
+        if !favorite {
+            
+            let predicate = NSPredicate(format: "favorite = %d", false)
+            fetchRequest.predicate = predicate
+            let sortByDateTaken = NSSortDescriptor(key: #keyPath(Photo.dateTaken),
+                                                   ascending: true)
+            
+            fetchRequest.sortDescriptors = [sortByDateTaken]
+        } else {
+            
+            let predicate = NSPredicate(format: "favorite = %d", true)
+            fetchRequest.predicate = predicate
+            
+            let sortByFavorite = NSSortDescriptor(key: #keyPath(Photo.favorite), ascending: true)
+            fetchRequest.sortDescriptors = [sortByFavorite]
+        }
+        
         
         let viewContext = persistentContainer.viewContext
         viewContext.perform {

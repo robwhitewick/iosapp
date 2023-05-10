@@ -5,6 +5,6 @@
         <attribute name="photoID" optional="YES" attributeType="String"/>
         <attribute name="remoteURL" optional="YES" attributeType="URI"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <attribute name="viewCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="Integer 32" defaultValueString="1" usesScalarValueType="YES"/>
     </entity>
 </model>

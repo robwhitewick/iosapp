@@ -10,6 +10,9 @@ import UIKit
 class PhotosViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
+    
     var store: PhotoStore!
     
     let photoDataSource = PhotoDataSource()
@@ -17,7 +20,7 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+        navigationItem.accessibilityLabel = "Photo rama"
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
         
@@ -70,8 +73,21 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
-    private func updateDataSource() {
-        store.fetchAllPhotos() {
+    @IBAction func toggleFavoriteView(_ sender: UISegmentedControl) {
+        
+        photoDataSource.photos.removeAll()
+        switch sender.selectedSegmentIndex {
+        case 0:
+            updateDataSource(favorite: false)
+        case 1:
+            updateDataSource(favorite: true)
+        default:
+            updateDataSource(favorite: false)
+        }
+    }
+    
+    func updateDataSource(favorite: Bool = false) {
+        store.fetchAllPhotos(favorite: favorite) {
             (photosResult) in
             
             switch photosResult {
@@ -83,6 +99,15 @@ class PhotosViewController: UIViewController, UICollectionViewDelegate {
             self.collectionView.reloadSections(IndexSet(integer: 0))
         }
     }
+    
+    
+    @IBAction func onSegmentedChange(_ sender: UISegmentedControl) {
+        self.photoDataSource.photos.removeAll()
+        
+        self.updateDataSource(favorite: true)
+    }
+
+    
 
 }
 

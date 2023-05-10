@@ -90,6 +90,7 @@ class ImageSelector: UIControl {
                 
                 imageButton.setImage(image, for: .normal)
                 imageButton.imageView?.contentMode = .scaleAspectFit
+//                if #available(<#T##Platform...##Platform#>, *)
                 imageButton.adjustsImageWhenHighlighted = false
                 imageButton.addTarget(self,
                                       action: #selector(imageButtonTapped(_:)),
